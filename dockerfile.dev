@@ -1,0 +1,8 @@
+FROM node:14
+LABEL maintainer="Mohamed"
+WORKDIR /app
+COPY ./package.json .
+RUN npm i -g yarn --force
+RUN yarn
+COPY . .
+CMD ["npm", "start"]
